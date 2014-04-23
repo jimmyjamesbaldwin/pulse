@@ -1,5 +1,0 @@
-bin/
-gen/
-*.keystore
-dist/
-.DS_Store
