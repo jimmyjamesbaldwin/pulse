@@ -1,6 +1,4 @@
-Loaned for Android
+Pulse for Android
 ==============
 
-Loaned is a friendly way of tracking who's borrowed your stuff. Similar to Repay but this doesn't carry anything with a monetary value.
-
-Published at: https://play.google.com/store/apps/details?id=com.mattallen.loaned
+Pulse is an Android client which interfaces with the Cadence API to provide remote server monitoring
