@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="settings_header">Header</string>
+    <string name="settings_title">Title</string>
+    <string name="settings_description">Description words things</string>
+    
+    <string name="settings_startfragment_title">Show Item List By Default</string>
+    <string name="settings_startfragment_descOn">Will show the item list by default</string>
+    <string name="settings_startfragment_descOff">Will show the person list by default</string>
+
+</resources>
