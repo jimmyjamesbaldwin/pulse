@@ -9,8 +9,8 @@
     <string name="okay">Okay</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="navdrawer_showbyperson">Show By Person</string>
     <string name="navdrawer_servers">Servers</string>
+    <string name="navdrawer_qrcode">Scan QR Code</string>
     <string name="navdrawer_showbyitem">Show By Item</string>
     <string name="navdrawer_addloan">Add Loan</string>
     <string name="navdrawer_stats">Stats</string>
@@ -47,11 +47,15 @@
     <string name="loanhistory_persondetails_itemsonloan">%d Items On Loan</string>
     <string name="serverinfofragment_cputilizationtitle">Utilization</string>
     <string name="serverinfofragment_cputilization">90%</string>
+    <string name="aboutfragment_title">About</string>
     <string name="aboutfragment_abouttheapp">Mercury Software Studios</string>
     <string name="aboutfragment_aboutus">Pulse lets you monitor remote servers from anywhere in the world</string>
     <string name="aboutfragment_aboutuscoverimage_contentdescription">About Us Mercury Software Studios</string>
+    <string name="aboutfragment_meettheteam">Meet The Team</string>
     <string name="serverinfofragment_serverinfo">Server Info</string>
     <string name="serverinfofragment_hddinfo">HDD Info</string>
     <string name="serverinfofragment_raminfo">RAM Info</string>
+    <string name="qrcode_btn_scan">Scan QR Code</string>
+    <string name="qrcode_lbl_message">Want to monitor a machine right in front of you?</string>
 
 </resources>

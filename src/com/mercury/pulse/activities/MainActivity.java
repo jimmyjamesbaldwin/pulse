@@ -22,7 +22,6 @@ import android.widget.ListView;
 
 import com.mercury.pulse.R;
 import com.mercury.pulse.adapters.NavDrawerListAdapter;
-import com.mercury.pulse.fragments.AboutFragment;
 import com.mercury.pulse.fragments.GraphFragment;
 import com.mercury.pulse.fragments.ServerListFragment;
 import com.mercury.pulse.fragments.StatFragment;
@@ -38,7 +37,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 	private ListView							mNavDrawerList;
 	private ActionBar							mActionBar;
 	private ActionBarDrawerToggle				mNavDrawerToggle;
-	private Fragment							mStatFrag, mServerListFrag, mAboutFrag, mGraphFrag;
+	private Fragment							mStatFrag, mServerListFrag, mGraphFrag;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,6 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		// Instatiate Fragments
 		mStatFrag = new StatFragment();
 		mServerListFrag = new ServerListFragment();
-		mAboutFrag = new AboutFragment();
 		mGraphFrag = new GraphFragment();
 
 		// Do navigation drawer things
@@ -67,10 +65,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		Log.d(TAG, "Adding items to nav drawer list");
 		mNavDrawerListItems = new ArrayList<NavDrawerListItem>();
 		mNavDrawerListItems.add(new NavDrawerListItem(R.drawable.ic_action_person, getResources().getString(R.string.navdrawer_servers)));
+		mNavDrawerListItems.add(new NavDrawerListItem(R.drawable.ic_action_qr, getResources().getString(R.string.navdrawer_qrcode)));
 		mNavDrawerListItems.add(new NavDrawerListItem(R.drawable.ic_stats, getResources().getString(R.string.navdrawer_stats)));
 		mNavDrawerListItems.add(new NavDrawerListItem(R.drawable.ic_action_history, getResources().getString(R.string.navdrawer_history)));
 		mNavDrawerListItems.add(new NavDrawerListItem(R.drawable.ic_action_settings, getResources().getString(R.string.navdrawer_settings)));
-		mNavDrawerListItems.add(new NavDrawerListItem(R.drawable.ic_action_settings, getResources().getString(R.string.navdrawer_about)));
+		mNavDrawerListItems.add(new NavDrawerListItem(R.drawable.ic_action_mercury, getResources().getString(R.string.navdrawer_about)));
 		// Change the app icon to show/hide nav drawer on click
 		mNavDrawerToggle = new ActionBarDrawerToggle(this, mNavDrawer, R.drawable.ic_drawer, R.string.main_navdrawer_open, R.string.main_navdrawer_close);
 		mNavDrawer.setDrawerListener(mNavDrawerToggle);
@@ -118,8 +117,14 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-		if (position == 3) {
+		if (position == 4) {
 			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+		} else if (position == 1) {
+			Intent intent = new Intent(this, QRActivity.class);
+			startActivity(intent);
+		} else if (position == 5) {
+			Intent intent = new Intent(this, AboutActivity.class);
 			startActivity(intent);
 		} else {
 			setFragment(position);
@@ -137,16 +142,12 @@ public class MainActivity extends Activity implements OnItemClickListener {
 			mFragMan.replace(mFrameLayout, mServerListFrag);
 			setActivityTitle(getResources().getString(R.string.app_name), null);
 			break;
-		case 1:
+		case 2:
 			mFragMan.replace(mFrameLayout, mStatFrag);
 			setActivityTitle(getResources().getString(R.string.app_name), null);
 			break;
-		case 2:
+		case 3:
 			mFragMan.replace(mFrameLayout, mGraphFrag);
-			setActivityTitle(getResources().getString(R.string.app_name), null);
-			break;
-		case 4:
-			mFragMan.replace(mFrameLayout, mAboutFrag);
 			setActivityTitle(getResources().getString(R.string.app_name), null);
 			break;
 		default:
