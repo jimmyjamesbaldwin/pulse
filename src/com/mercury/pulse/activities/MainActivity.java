@@ -79,8 +79,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
 		// Show the default Fragment
 		FragmentTransaction mFragMan = getFragmentManager().beginTransaction();
-		// Check what the default is
-		mFragMan.add(mFrameLayout, mServerListFrag);
+		mFragMan.replace(mFrameLayout, mServerListFrag);
 		setActivityTitle(getResources().getString(R.string.app_name), null);
 		mFragMan.commit();
 	}
@@ -115,6 +114,15 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
+	public void onResume() {
+		super.onResume();
+		/*if (mFragMan == null) {
+			Toast.makeText(getApplicationContext(), "this is my Toast message!!! =)",
+					   Toast.LENGTH_LONG).show();
+		}*/
+	}
+	
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 		if (position == 4) {
